@@ -5,7 +5,9 @@ class PoochPads < Sinatra::Base
   end
 
   post '/users' do
-    @user = User.new(email: params[:email])
+    @user = User.new(email: params[:email],
+                    password: params[:password],
+                    password_confirmation: params[:password_confirmation])
     @user.save
     redirect to ('/')
   end
