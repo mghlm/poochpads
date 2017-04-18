@@ -5,6 +5,11 @@ feature 'Sign up' do
     expect(User.first.email).to eq('dog@gmail.com')
   end
 
+  scenario 'User is sent to /pads when signed up succesfully' do
+    sign_up
+    expect(page).to have_current_path('/pads')
+  end
+
   scenario 'password and password confirmation match' do
     expect{sign_up(password_confirmation: "wrong")}.not_to change(User, :count)
   end
