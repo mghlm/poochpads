@@ -5,7 +5,9 @@ class PoochPads < Sinatra::Base
   end
 
   post '/sessions' do
-    if current_user
+    user = User.authenticate(params[:email],
+                            params[:password])
+    if user
       redirect to '/pads'
     else
       erb :'/sessions/new'
