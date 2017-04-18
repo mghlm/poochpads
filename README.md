@@ -1,5 +1,12 @@
-Chitter Challenge
-=================
+# Pooch Pads
+
+## Collaborators
+* [Naz Malik](https://github.com/nazwhale)
+* [Magnus Holm](https://github.com/mghlm)
+* [Pete Wilkins](https://github.com/petewilkins)
+* [Elaine Osbourn](https://github.com/kittysquee/)
+
+## User stories
 
 ```
 As a user
@@ -26,3 +33,29 @@ As a user
 So I can enjoy a holiday
 I would like to be able to book a place
 ```
+
+## Technologies used
+* Postgresql
+* Datamapper
+* BCrypt
+* Sinatra
+* Sinatra Flash
+* Ruby
+* HTML
+* CSS
+* Database cleaner
+* Rake
+* Rack
+* Git
+* Github
+* Atom
+* Vim
+
+## Approaches taken
+* Fully test driven development with RSpec and Capybara
+* Daily stand ups
+* Daily retrospectives
+* Regular feedback
+* Open discourse with all team members
+* Regular progress updates
+* Through documentation and issue creation on Github
