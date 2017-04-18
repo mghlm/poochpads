@@ -1,7 +1,6 @@
 class PoochPads < Sinatra::Base
 
   get '/pads' do
-    @pads = Pad.all
     erb :'pads/index'
   end
 
@@ -10,8 +9,7 @@ class PoochPads < Sinatra::Base
   end
 
   post '/pads' do
-    pad = Pad.new(name: params[:name])
-    # pad.save
+    $padname = params[:name]
     redirect '/pads'
   end
 end

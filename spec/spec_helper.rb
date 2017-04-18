@@ -3,6 +3,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require './app/app'
+require './app/models/pad'
 require 'pry'
 require_relative './helpers/listing'
 

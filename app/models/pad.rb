@@ -1,5 +1,5 @@
 class Pad
 
-  property :name, Text
+  # property :name, String
 
 end
