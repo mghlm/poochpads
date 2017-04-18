@@ -1,6 +1,21 @@
+<style> 
+body {
+  background-color: tomato;
+  text-align: center;
+  margin-top: 8%;
+}
+</style>
+<body>
+  
+<h1>Book a pad</h1>
+
+<h1><%= $padname %></h1>
+
 <% if current_user %>
   <form action='sessions' method='post'>
     <input type='hidden' name='_method' value='delete'>
     <input type='submit' value='Sign out'>
   </form>
 <% end %>
+
+</body>
