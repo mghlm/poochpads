@@ -3,4 +3,5 @@ feature 'View the pads' do
     visit '/pads'
     expect(page).to have_content('Book a pad')
   end
+
 end
