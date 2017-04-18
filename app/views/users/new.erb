@@ -1,0 +1,26 @@
+
+<form action='/users' method='post'>
+
+
+  <% if flash[:errors] && !flash[:errors].empty? %>
+
+    <div>
+      <% flash[:errors].each do |error| %>
+      <div id="error">
+      <%= error %>
+      </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  Email: <input type='text' name='email' required>
+
+  Password: <input type='password' name='password'>
+
+  Password Confirmation: <input type='password' name='password_confirmation'>
+
+  <input type='submit' value='Sign up'>
+
+
+</form>
