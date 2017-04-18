@@ -1,5 +1,6 @@
 class PoochPads < Sinatra::Base
+
   get '/pads' do
-    erb :'/pads'
+    erb :'pads/index'
   end
 end
