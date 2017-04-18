@@ -16,7 +16,11 @@ class PoochPads < Sinatra::Base
   set :views, Proc.new { File.join(root, "views") }
 
   get '/' do
-    redirect('/pads')
+    if !current_user
+      redirect to '/sessions/new'
+    else
+      redirect to '/pads'
+    end
   end
 
   run! if app_file == $0
