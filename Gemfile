@@ -7,6 +7,7 @@ gem 'data_mapper'
 gem 'dm-migrations'
 gem 'sinatra'
 gem 'sinatra-flash'
+gem 'sinatra-partial'
 gem 'bcrypt'
 gem 'database_cleaner'
 
