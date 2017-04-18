@@ -1,6 +1,20 @@
 
 <form action='/users' method='post'>
-  Email: <input type='text' name='email'>
+
+
+  <% if flash[:errors] && !flash[:errors].empty? %>
+
+    <div>
+      <% flash[:errors].each do |error| %>
+      <div id="error">
+      <%= error %>
+      </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  Email: <input type='text' name='email' required>
 
   Password: <input type='password' name='password'>
 
