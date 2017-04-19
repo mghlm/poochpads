@@ -16,6 +16,7 @@ def sign_in(email: 'dog@gmail.com',
   click_button('Sign in')
 end
 
+
 def sign_up_owner(email: 'owner@gmail.com',
             password: '123dog',
             password_confirmation: '123dog')
@@ -39,3 +40,4 @@ def list_pad
   create_listing
   click_button('Sign out')
 end 
+

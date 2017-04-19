@@ -6,5 +6,8 @@ feature 'Book pad' do
     click_button ('Book Pad')
     expect(current_path).to eq '/pads/request'
     expect(page).to have_content ('House by the Sea')
+    expect(page).to have_content ('999')
+    expect(page).to have_content ('Brighton')
+    expect(page).to have_content ('A b-e-a utiful house')
   end
 end

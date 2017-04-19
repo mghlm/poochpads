@@ -4,7 +4,8 @@ module ListingHelpers
                      price: '999',
                      location: 'Brighton',
                      about: 'A b-e-a utiful house that will make your dog\'s tail wag so much you\'ll have to go to the vet')
-    visit '/pads/new'
+    visit '/pads'
+    click_button 'List a Pad'
     fill_in(:name, with: name)
     fill_in(:price, with: price)
     fill_in(:location, with: location)

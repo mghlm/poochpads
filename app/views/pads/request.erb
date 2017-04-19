@@ -1,7 +1,9 @@
-<%= @selected_pad.name %>
-
 <form action='/pads/confirmation' method='get'>
   <button type='submit' value='Confirm Request'>
     Confirm Request
   </button>
 </form>
+House name: <%= @selected_pad.name %><br />
+Price: £<%= @selected_pad.price %><br />
+Location: <%= @selected_pad.location %><br />
+About: <%= @selected_pad.about %>
