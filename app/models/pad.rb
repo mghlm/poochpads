@@ -11,4 +11,8 @@ class Pad
   property :about, Text
   property :available, Boolean, :default => true
 
+  def switch_availability
+    self.available = false
+  end
+
 end

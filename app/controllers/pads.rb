@@ -1,5 +1,6 @@
 class PoochPads < Sinatra::Base
 
+
   get '/pads' do
     @pads = Pad.all
     erb :'pads/index'
@@ -32,6 +33,14 @@ class PoochPads < Sinatra::Base
   get '/pads/request' do
     @selected_pad = Pad.first(id: session[:pad_id])
     erb :'pads/request'
+  end
+
+  get '/pads/confirmation' do
+
+    pad = Pad.first(id: session[:pad_id])
+    pad.switch_availability
+    pad.save
+    erb :'pads/confirmation'
   end
 
 
