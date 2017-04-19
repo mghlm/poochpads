@@ -14,5 +14,4 @@ feature 'Log in' do
   end
 
 
-
 end

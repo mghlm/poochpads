@@ -5,4 +5,4 @@ feature 'User signs out' do
     click_button('Sign out')
     expect(page).to have_current_path('/sessions/new')
   end
-end 
+end

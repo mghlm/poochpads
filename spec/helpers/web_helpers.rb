@@ -14,4 +14,4 @@ def sign_in(email: 'dog@gmail.com',
   fill_in(:email, with: email)
   fill_in(:password, with: password)
   click_button('Sign in')
-end             
+end
