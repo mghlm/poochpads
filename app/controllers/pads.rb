@@ -20,4 +20,15 @@ class PoochPads < Sinatra::Base
     current_user.save
     redirect '/pads'
   end
+
+  post '/pads/:id' do
+    $chosenid = params[:id]
+    redirect '/pads/request'
+  end
+
+  get '/pads/request' do
+    erb :'pads/request'
+  end
+
+
 end
