@@ -13,7 +13,8 @@ body {
   <% @pads.each do |pad| %>
     <li>
       <%= pad.name %>
-      <%= pad.id %>
+      <%= pad.location %>
+      <%= pad.price %>
       <form action='/pads/<%= pad.id %>' method='post'>
         <input type='submit' value='Book Pad'>
       </form>
