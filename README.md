@@ -9,7 +9,8 @@
 ## User stories
 
 
-** MVP **
+**MVP**
+
 ```
 As a user
 So I can have an account
@@ -76,7 +77,7 @@ So I can keep details up to date
 I would like to be able to update my pad listing
 ```
 
-** EMAILING **
+**EMAILING**
 
 ```
 As a dog owner
@@ -104,7 +105,7 @@ So I am not disappointed
 I would like to receive an email if request denied
 ```
 
-** TEXT MESSAGES **
+**TEXT MESSAGES**
 
 ```
 As a pad lord
@@ -124,7 +125,7 @@ So I can be kept up to date after booking
 I would like to have chat functionality
 ```
 
-** PAYMENT SYSTEM **
+**PAYMENT SYSTEM**
 
 ```
 As a dog owner
