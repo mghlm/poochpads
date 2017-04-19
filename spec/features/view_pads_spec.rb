@@ -1,9 +1,8 @@
 feature 'View the pads' do
   scenario 'User can visit pads page' do
-    visit '/pads/new'
-    fill_in :name, with: "Nazs Pad"
-    click_button "Submit"
-    expect(page).to have_content('Nazs Pad')
+    sign_up
+    create_listing
+    expect(page).to have_content('House by the Sea')
   end
 
 end

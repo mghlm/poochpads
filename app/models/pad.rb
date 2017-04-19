@@ -1,5 +1,10 @@
 class Pad
 
-  # property :name, String
+  include DataMapper::Resource
+
+  belongs_to :user
+
+  property :id, Serial
+  property :name, String
 
 end
