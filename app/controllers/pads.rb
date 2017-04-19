@@ -23,4 +23,16 @@ class PoochPads < Sinatra::Base
     current_user.save
     redirect '/pads'
   end
+
+  post '/pads/:id' do
+    session[:pad_id] = params[:id]
+    redirect '/pads/request'
+  end
+
+  get '/pads/request' do
+    @selected_pad = Pad.first(id: session[:pad_id])
+    erb :'pads/request'
+  end
+
+
 end

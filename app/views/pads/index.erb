@@ -15,6 +15,9 @@ body {
       <%= pad.name %>
       <%= pad.location %>
       <%= pad.price %>
+      <form action='/pads/<%= pad.id %>' method='post'>
+        <input type='submit' value='Book Pad'>
+      </form>
     </li>
   <% end %>
 </ul>
