@@ -22,11 +22,12 @@ class PoochPads < Sinatra::Base
   end
 
   post '/pads/:id' do
-    $chosenid = params[:id]
+    session[:pad_id] = params[:id]
     redirect '/pads/request'
   end
 
   get '/pads/request' do
+    @pad_with_id = Pad.first(id: session[:pad_id])
     erb :'pads/request'
   end
 
