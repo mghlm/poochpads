@@ -16,4 +16,8 @@ class PoochPads < Sinatra::Base
       erb :'users/new'
     end
   end
+
+  get '/users/kennel' do
+    erb :'/users/kennel'
+  end
 end
