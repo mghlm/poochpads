@@ -15,7 +15,10 @@ class PoochPads < Sinatra::Base
   end
 
   post '/pads' do
-    pad = Pad.create(name: params[:name])
+    pad = Pad.create(name: params[:name],
+                     price: params[:price],
+                     location: params[:location],
+                     about: params[:about])
     current_user.pads << pad
     current_user.save
     redirect '/pads'
