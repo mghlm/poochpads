@@ -18,7 +18,7 @@ body {
 <ul id="pads">
   <% @pads.each do |pad| %>
     <li>
-      <%= pad.name %>
+      <%= pad.name %> <%= pad.available ? "is available for good boys" : "is full of poochies at the moment" %>
       <%= pad.location %>
       <%= pad.price %>
       <form action='/pads/<%= pad.id %>' method='post'>

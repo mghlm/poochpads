@@ -5,4 +5,6 @@ feature 'Availability' do
     create_listing
     expect(Pad.first.available).to be_truthy
   end
+
+
 end
