@@ -6,5 +6,7 @@ class Pad
 
   property :id, Serial
   property :name, String
+  property :price, Integer
+  property :about, Text
 
 end
