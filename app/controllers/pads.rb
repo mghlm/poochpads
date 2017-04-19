@@ -27,7 +27,7 @@ class PoochPads < Sinatra::Base
   end
 
   get '/pads/request' do
-    @pad_with_id = Pad.first(id: session[:pad_id])
+    @selected_pad = Pad.first(id: session[:pad_id])
     erb :'pads/request'
   end
 
