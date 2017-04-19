@@ -5,6 +5,7 @@ feature 'list new pad' do
     create_listing
     expect(current_path).to eq '/pads'
     expect(page).to have_content 'House by the Sea'
+    expect(page).to have_content 'Brighton'
     expect(page).to have_content '999'
   end
 end
