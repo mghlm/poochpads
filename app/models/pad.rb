@@ -9,5 +9,6 @@ class Pad
   property :price, Integer
   property :location, String
   property :about, Text
+  property :available, Boolean, :default => true
 
 end
