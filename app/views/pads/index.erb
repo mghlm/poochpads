@@ -9,6 +9,12 @@ body {
 
 <h1>Book a pad</h1>
 
+<form action='/users/kennel' method='get'>
+  <button type='submit' value='My Kennel'>
+    My Kennel
+  </button>
+</form>
+
 <ul id="pads">
   <% @pads.each do |pad| %>
     <li>
@@ -21,8 +27,6 @@ body {
     </li>
   <% end %>
 </ul>
-
-
 
 <% if current_user %>
   <form action='sessions' method='post'>
