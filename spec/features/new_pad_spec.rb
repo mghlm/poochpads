@@ -8,4 +8,5 @@ feature 'list new pad' do
     expect(page).to have_content 'Brighton'
     expect(page).to have_content '999'
   end
+
 end
