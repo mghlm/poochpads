@@ -47,6 +47,7 @@ class PoochPads < Sinatra::Base
   get '/pads/confirmation' do
     confirmed_pad = Booking.first(id: session[:pad_id])
     # require 'pry'; binding.pry
+    # we need to get the name from the booking/pad
     # confirmed_pad.switch_availability
     # confirmed_pad.save
     erb :'pads/confirmation'
