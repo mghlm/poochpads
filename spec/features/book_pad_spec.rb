@@ -32,7 +32,7 @@ feature 'More Info' do
   scenario 'Displays calander that user can pick a date from' do
     list_pad
     sign_up_owner
-    click_button ('Book Pad')
+    click_button ('More Info')
     expect(page).to have_content('Choose Date')
   end
 end
