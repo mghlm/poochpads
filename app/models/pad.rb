@@ -3,6 +3,7 @@ class Pad
   include DataMapper::Resource
 
   belongs_to :user
+  has n, :bookings, through: Resource
 
   property :id, Serial
   property :name, String
