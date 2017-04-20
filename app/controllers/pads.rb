@@ -35,11 +35,20 @@ class PoochPads < Sinatra::Base
     erb :'pads/request'
   end
 
-  get '/pads/confirmation' do
+  post '/pads/confirmation' do
+    chosen_date = params[:booking_date]
+    this_booking = Booking.create(date: chosen_date)
+    current_user.bookings << this_booking
+    current_user.save
 
     pad = Pad.first(id: session[:pad_id])
     pad.switch_availability
     pad.save
+    redirect '/pads/confirmation'
+  end
+
+  get '/pads/confirmation' do
+    @new_booking = Booking.first
     erb :'pads/confirmation'
   end
 

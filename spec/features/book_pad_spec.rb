@@ -28,4 +28,11 @@ feature 'Book pad' do
     expect(page).to_not have_selector(:link_or_button, 'Confirm Request')
     expect(page).to have_content ('This pad is full of poochies at the moment!')
   end
+
+  scenario 'Displays calander that user can pick a date from' do
+    list_pad
+    sign_up_owner
+    click_button ('Book Pad')
+    expect(page).to have_content('Choose Date')
+  end
 end
