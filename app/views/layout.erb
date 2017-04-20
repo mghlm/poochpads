@@ -14,17 +14,37 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href='/pads'>
             <img alt="Brand" src="https://image.flaticon.com/icons/svg/235/235405.svg">
           </a>
           <p class="navbar-text">PoochPads</p>
         </div>
 
           <% if current_user %>
-          <form action='/sessions' method='post'>
-            <input type='hidden' name='_method' value='delete'>
-            <input type='submit' value='Sign out' class='btn btn-default navbar-btn navbar-right'>
-          </form>
+            <ul class='nav navbar-nav navbar-right'>
+            <li>
+              <form action='/pads/new' method='get'>
+                <button  id='navbar-buttons' class='btn btn-default navbar-btn' type='submit' value='List a Pad'>
+                  List a Pad
+                </button>
+              </form>
+            </li>
+
+            <li>
+              <form action='/users/kennel' method='get'>
+                <button  id='navbar-buttons' class='btn btn-default navbar-btn' type='submit' value='My Kennel'>
+                  My Kennel
+                </button>
+              </form>
+            </li>
+
+            <li>
+              <form action='/sessions' method='post'>
+                <input type='hidden' name='_method' value='delete'>
+                <input id='navbar-buttons' type='submit' value='Sign out' class='btn btn-default navbar-btn'>
+              </form>
+            </li>
+          </ul>
           <% else %>
             <form action='/sessions/new' method='get'>
               <button type='submit' class='btn btn-default navbar-btn navbar-right'>Sign In</button>

@@ -6,31 +6,34 @@
       <h1>Book a Pad</h1>
     </div>
   </div>
-</div>
-<form action='/users/kennel' method='get'>
-  <button type='submit' value='My Kennel'>
-    My Kennel
-  </button>
-</form>
 
-<form action='/pads/new' method='get'>
-  <button type='submit' value='List a Pad'>
-    List a pad
-  </button>
-</form>
 
-<ul id="pads">
+
+
+
+
   <% @pads.each do |pad| %>
-    <li>
-      <%= pad.name %> <%= pad.available ? "is available for good boys" : "is full of poochies at the moment" %>
+
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <h3 class='panel-title'><%= pad.name %></h3>
+    </div>
+    <div class='panel-body'>
+    <%= pad.available ? "is available for good boys" : "is full of poochies at the moment" %>
       <%= pad.location %>
       <%= pad.price %>
       <form action='/pads/<%= pad.id %>' method='post'>
-        <input type='submit' value='Book Pad'>
+        <input class='btn btn-success pull-right' type='submit' value='More Info'>
       </form>
-    </li>
+    </div>
+  </div>
+
+
+
   <% end %>
-</ul>
+
+  </div>
+
 
 
 

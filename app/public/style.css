@@ -10,3 +10,7 @@
 body {
   padding-top: 70px;
 }
+
+#navbar-buttons {
+  margin-left: 5px;
+}
