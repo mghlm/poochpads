@@ -1,8 +1,15 @@
+
+
+<% if @selected_pad.available %>
 <form action='/pads/confirmation' method='get'>
   <button type='submit' value='Confirm Request'>
     Confirm Request
   </button>
 </form>
+<% else %>
+  This pad is full of poochies at the moment!
+<% end %>
+
 House name: <%= @selected_pad.name %><br />
 Price: £<%= @selected_pad.price %><br />
 Location: <%= @selected_pad.location %><br />
