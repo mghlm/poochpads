@@ -41,14 +41,14 @@ class PoochPads < Sinatra::Base
     current_user.bookings << this_booking
     current_user.save
 
-    pad = Pad.first(id: session[:pad_id])
-    pad.switch_availability
-    pad.save
     redirect '/pads/confirmation'
   end
 
   get '/pads/confirmation' do
     @new_booking = Booking.first
+    pad = Pad.first(id: session[:pad_id])
+    pad.switch_availability
+    pad.save
     erb :'pads/confirmation'
   end
 
