@@ -1,17 +1,29 @@
-<form action='/pads' method='post'>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-4"></div>
 
-  <label>
-    Name of Pad
-    <input type='text' name='name' required>
-    Price of Pad
-    <input type='number' min='1' name='price' required>
-    Location of Pad
-    <input type='text' name='location' required>
-    About your Pad
-  </label>
-  <textarea rows='3' cols='50' name='about'></textarea>
+    <div class="col-sm-4">
+      <div class="page-header text-center">
+        <h1>List a Pad</h1>
+      </div>
 
-  <button type='submit' value='Submit'>
-    Submit
-  </button>
-</form>
+      <form action='/pads' method='post'>
+        <div class="input-group">
+          <input type='text' class='form-control' placeholder='Name of Pad' name='name' required>
+        </div>
+        <div class="input-group">
+          <input type='number' min='1' class='form-control' placeholder='Price (per night)' name='price' required>
+        </div>
+        <div class="input-group">
+          <input type='text' class='form-control' placeholder='Location of Pad' name='location' required>
+        </div>
+        <div class="input-group">
+          <textarea rows='3' cols='50' class='form-control' placeholder='Details about Pad' name='about'></textarea>
+        </div>
+        <div class="input-group">
+          <input type='submit' class="btn btn-primary btn-block" value='Submit'>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

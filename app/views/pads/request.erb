@@ -1,3 +1,54 @@
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-3'></div>
+      <div class='col-sm-6'>
+
+        <div class='page-header text-center'>
+          <h1><%= @selected_pad.name %></h1>
+        </div>
+
+        <div class='well well-sm'>
+          <h5>About</h5>
+          <p>£<%= @selected_pad.price %><p>
+          <p><%= @selected_pad.location.capitalize %><p>
+          <p><%= @selected_pad.about.capitalize %><p>
+        </div>
+
+
+        <div id='map' class='text-center'>
+          <iframe
+            width="550"
+            height="300"
+            frameborder="10" style="border:3"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9R3ulT60bFNuWCjvsrMHBm5l579Q9N_I
+                        &q=<%= @selected_pad.location %>" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class='well well-sm'>
+          <h5>Current Bookings</h5>
+          <% bookings = @selected_pad.bookings %>
+            <% bookings.all.each do |booking| %>
+              <p><%= booking.date %></p>
+            <% end %>
+        </div>
+
+        <div id='date' class='text-center'>
+          <form action='/confirmation' method='post'>
+            Choose Date: <input type="date" name="booking_date"><br />
+              <button id='submit' class="btn btn-primary" type='submit' value='Confirm Request'>
+                  Confirm Request
+              </button>
+          </form>
+        </div>
+
+      </div>
+
+    <div class='col-sm-3'></div>
+  </div>
+</div>
+
 <% require 'date' %>
 
 House name: <%= @selected_pad.name %><br />
@@ -19,3 +70,4 @@ About: <%= @selected_pad.about %>
 <% bookings.all.each do |booking| %>
 <%= booking.date %>
 <% end %>
+
