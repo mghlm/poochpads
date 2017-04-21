@@ -32,5 +32,6 @@ feature 'More Info' do
     fill_in(:booking_date, with: '21/04/2018')
     click_button('Confirm Request')
     expect(page).to have_content('Error, you cannot book your own pad')
+    expect(Pad.first.available).to be_truthy
   end
 end
