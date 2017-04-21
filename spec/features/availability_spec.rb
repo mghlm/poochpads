@@ -10,9 +10,13 @@ feature 'Availability' do
     list_pad
     sign_up_owner
     click_button('More Info')
+    fill_in(:booking_date, with: "2018/01/01")
     click_button('Confirm Request')
+
     expect(page).to have_content('You successfully booked:')
-    # expect(Pad.first.available).to be_falsy
+
+    expect(page).to have_content('You successfully booked the following pad:')
+
     visit('/pads')
     expect(page).to have_content('Fully Booked')
   end

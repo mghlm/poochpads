@@ -1,3 +1,4 @@
+
 <div class='container'>
   <div class='row'>
     <div class="col-sm-2"></div>
@@ -15,3 +16,12 @@
     <div class="col-sm-2"></div>
   </div>
 </div>
+<% if @confirmed_pad.user == current_user %>
+  <p>Error, you cannot book your own pad<p>
+<% elsif @confirmed_booking.date == "" %>
+  <p>Error, please specify a date</p>
+<% else %>
+  <h1>You successfully booked the following pad:</h1><%= @confirmed_pad.name %>
+  <h2>Your booking is confirmed for the <%= @confirmed_booking.date %>
+<%end%>
+
