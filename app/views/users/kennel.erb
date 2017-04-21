@@ -6,5 +6,12 @@
       <%= pad.location %>
       <%= pad.price %>
     </li>
+    <li>
+      <% Booking.all.each do |booking| %>
+        <% if booking.pad_id == pad.id %>
+          <%= booking.date %>
+        <% end %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
