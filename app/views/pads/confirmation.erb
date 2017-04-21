@@ -5,6 +5,12 @@
 
     <div class="col-sm-8">
       <div class='page-header text-center'>
+
+      <% if @confirmed_pad.user == current_user %>
+        <h1>Error, you cannot book your own pad<h1>
+      <% elsif @confirmed_booking.date == "" %>
+        <h1>Error, please specify a date</h1>
+      <% else %>
         <h1>You successfully booked: </h1>
         <h1><%= @confirmed_pad.name %></h1>
         <h2>on <%= @confirmed_booking.date %></h2>
@@ -12,16 +18,9 @@
       <div class='well'>
         The booking has been added to the "My Bookings" page
       </div>
+      <%end%>
     </div>
     <div class="col-sm-2"></div>
   </div>
 </div>
-<% if @confirmed_pad.user == current_user %>
-  <p>Error, you cannot book your own pad<p>
-<% elsif @confirmed_booking.date == "" %>
-  <p>Error, please specify a date</p>
-<% else %>
-  <h1>You successfully booked the following pad:</h1><%= @confirmed_pad.name %>
-  <h2>Your booking is confirmed for the <%= @confirmed_booking.date %>
-<%end%>
 

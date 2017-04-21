@@ -48,26 +48,3 @@
     <div class='col-sm-3'></div>
   </div>
 </div>
-
-<% require 'date' %>
-
-House name: <%= @selected_pad.name %><br />
-Price: £<%= @selected_pad.price %><br />
-Location: <%= @selected_pad.location %><br />
-About: <%= @selected_pad.about %>
-
-<% todays_date = DateTime.now.strftime("%Y-%m-%d") %>
-
-<form action='/confirmation' method='post'>
-  Choose Date: <input type="date" min="<%= todays_date %>" name="booking_date"><br />
-    <button type='submit' value='Confirm Request'>
-        Confirm Request
-    </button>
-</form>
-
-
-<% bookings = @selected_pad.bookings %>
-<% bookings.all.each do |booking| %>
-<%= booking.date %>
-<% end %>
-
