@@ -14,3 +14,12 @@ About: <%= @selected_pad.about %>
 <% bookings.all.each do |booking| %>
 <%= booking.date %>
 <% end %>
+
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9R3ulT60bFNuWCjvsrMHBm5l579Q9N_I
+                  &q=<%= @selected_pad.location %>" allowfullscreen>
+</iframe>
