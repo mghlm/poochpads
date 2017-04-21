@@ -8,4 +8,5 @@ feature 'request pad' do
     visit('/pads/request')
     expect(page).to have_content('21/04/2017')
   end
+
 end
