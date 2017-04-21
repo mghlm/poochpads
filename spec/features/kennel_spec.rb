@@ -3,7 +3,7 @@ feature 'view kennel' do
     sign_up
     create_listing
     click_button 'My Kennel'
-    expect(page).to have_content('House by the Sea')
+    expect(page).to have_content('House by the sea')
   end
 
   scenario 'dog-lord can view bookings for their pads' do
