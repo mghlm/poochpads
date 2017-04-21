@@ -1,20 +1,11 @@
 House name: <%= @selected_pad.name %><br />
+Price: £<%= @selected_pad.price %><br />
+Location: <%= @selected_pad.location %><br />
+About: <%= @selected_pad.about %>
 
-<form action='/pads/confirmation' method='post'>
+<form action='/confirmation' method='post'>
   Choose Date: <input type="date" name="booking_date"><br />
-</form>
-
-<% if @selected_pad.available %>
-
-  <form action='/pads/confirmation' method='get'>
     <button type='submit' value='Confirm Request'>
         Confirm Request
     </button>
   </form>
-<% else %>
-  This pad is full of poochies at the moment!
-<% end %>
-
-Price: £<%= @selected_pad.price %><br />
-Location: <%= @selected_pad.location %><br />
-About: <%= @selected_pad.about %>

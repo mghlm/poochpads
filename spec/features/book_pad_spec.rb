@@ -11,22 +11,11 @@ feature 'More Info' do
     expect(page).to have_content ('A b-e-a utiful house')
   end
 
-  scenario 'Will only show More Info button if available' do
+  scenario 'Will only show Confirm Request button' do
     list_pad
     sign_up_owner
     click_button ('More Info')
     expect(page).to have_selector(:link_or_button, 'Confirm Request')
-  end
-
-  scenario 'Will not show More Info button if not available' do
-    list_pad
-    sign_up_owner
-    click_button ('More Info')
-    click_button ('Confirm Request')
-    visit '/pads'
-    click_button ('More Info')
-    expect(page).to_not have_selector(:link_or_button, 'Confirm Request')
-    expect(page).to have_content ('This pad is full of poochies at the moment!')
   end
 
   scenario 'Displays calander that user can pick a date from' do
