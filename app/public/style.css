@@ -1,3 +1,9 @@
+
+div.input-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 .navbar-brand>img{
   width: 30px;
   height: 30px;
@@ -9,8 +15,13 @@
 
 body {
   padding-top: 70px;
+  background-color: #cfbbac;
 }
 
 #navbar-buttons {
   margin-left: 5px;
+}
+
+html, body {
+  height: 100%;
 }
