@@ -14,8 +14,26 @@ div.input-group {
 
 body {
   padding-top: 70px;
+  background-color: #cfbbac;
 }
 
 #navbar-buttons {
   margin-left: 5px;
+}
+
+html, body {
+  height: 100%;
+}
+
+div#map {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button#submit {
+  margin-top: 20px;
+}
+
+div#date {
+  margin-top: 20px;
 }
