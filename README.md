@@ -75,6 +75,10 @@ I would like my pad to remain available until I approve booking
 As a pad lord
 So I can keep details up to date
 I would like to be able to update my pad listing
+
+As a dog owner
+So I can know when the pad is unavailable
+I want to see a list of booked dates on the request page
 ```
 
 **EMAILING**
