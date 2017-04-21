@@ -1,2 +1,6 @@
-<h1>You successfully booked the following pad:</h1><%= @confirmed_pad.name %>
-<h2>Your booking is confirmed for the <%= @confirmed_booking.date %>
+<% if @confirmed_pad.user == current_user %>
+  <p>Error, you cannot book your own pad<p>
+<% else %>
+  <h1>You successfully booked the following pad:</h1><%= @confirmed_pad.name %>
+  <h2>Your booking is confirmed for the <%= @confirmed_booking.date %>
+<%end%>
