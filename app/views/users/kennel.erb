@@ -1,18 +1,31 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-sm-2"></div>
 
-<ul id="kennel">
-  <% current_user.pads.each do |pad| %>
-    <li>
-      <%= pad.name %>
-      <%= pad.location %>
-      <%= pad.price %>
-    </li>
-    <li>
-      <% Booking.all.each do |booking| %>
-        <% if booking.pad_id == pad.id %>
-          <%= booking.date %>
-        <% end %>
+    <div class="col-sm-8">
+      <div class="page-header text-center">
+        <h1>My Pads</h1>
+      </div>
+
+      <% current_user.pads.each do |pad| %>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            <h3 class='panel-title'><%= pad.name.capitalize %></h3>
+          </div>
+
+          <div class='panel-body'>
+            <%= pad.location.capitalize %><br />
+            £<%= pad.price %> per/night<br />
+            <span class="label label-danger">Booked</span><br />
+            <% Booking.all.each do |booking| %>
+              <% if booking.pad_id == pad.id %>
+                <%= booking.date %>,
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-    </li>
-  <% end %>
-
-</ul>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

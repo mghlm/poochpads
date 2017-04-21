@@ -1,23 +1,35 @@
-<% unless current_user.bookings == [] %>
-<ul id="my_bookings">
-  <% current_user.bookings.each do |booking| %>
-  <li>
-    <%= booking.date %>
-    <% Pad.all.each do |pad| %>
-      <% if booking.pad_id == pad.id %>
-        <%= pad.name %> 
-        <%= pad.location %>
-      <% end %>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
-<% else %>
-  You have no bookings
-<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-2"></div>
 
-<form action="/pads" method="get">
-  <button type="submit" value="View Pads">
-    View Pads
-  </button>
-</form>
+    <div class="col-sm-8">
+      <div class='page-header text-center'>
+        <h1>My Bookings</h1>
+      </div>
+
+      <% unless current_user.bookings == [] %>
+        <% current_user.bookings.each do |booking| %>
+          <div class='panel panel-default'>
+            <div class='panel-heading'>
+              <h3 class='panel-title'><%= booking.date %></h3>
+            </div>
+              <% Pad.all.each do |pad| %>
+                <% if booking.pad_id == pad.id %>
+                  <div class='panel-body'>
+                    <%= pad.name.capitalize %><br />
+                    <%= pad.location.capitalize %><br />
+                    £<%= pad.price %> per/night
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class='panel-body'>
+          You have no bookings
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

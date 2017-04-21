@@ -11,9 +11,9 @@ feature 'Availability' do
     sign_up_owner
     click_button('More Info')
     click_button('Confirm Request')
-    expect(page).to have_content('You successfully booked the following pad:')
+    expect(page).to have_content('You successfully booked:')
     # expect(Pad.first.available).to be_falsy
     visit('/pads')
-    expect(page).to have_content('is full of poochies at the moment')
+    expect(page).to have_content('Fully Booked')
   end
 end

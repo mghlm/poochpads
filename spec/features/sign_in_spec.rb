@@ -10,8 +10,6 @@ feature 'Log in' do
     sign_up
     click_button('Sign out')
     sign_in(password: 'wrong')
-    expect(page).to have_content('Email:')
+    expect(current_path).to eq('/sessions')
   end
-
-
 end
