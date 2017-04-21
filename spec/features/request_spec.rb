@@ -1,5 +1,3 @@
-require 'timecop'
-
 feature 'request pad' do
   scenario 'Lists booked dates for pad' do
     list_pad
