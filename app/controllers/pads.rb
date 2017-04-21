@@ -41,15 +41,15 @@ class PoochPads < Sinatra::Base
     current_user.bookings << this_booking
     confirmed_pad.bookings << this_booking
     current_user.save
+    session[:booking_id] = this_booking[:id]
     redirect '/pads/confirmation'
   end
 
   get '/pads/confirmation' do
-    confirmed_pad = Booking.first(id: session[:pad_id])
-    # require 'pry'; binding.pry
-    # we need to get the name from the booking/pad
-    # confirmed_pad.switch_availability
-    # confirmed_pad.save
+    @confirmed_booking = Booking.first(id: session[:booking_id])
+    @confirmed_pad = Pad.first(id: session[:pad_id])
+    @confirmed_pad.switch_availability
+    @confirmed_pad.save
     erb :'pads/confirmation'
   end
 
