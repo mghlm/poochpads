@@ -7,18 +7,13 @@
           <h1><%= @selected_pad.name %></h1>
         </div>
 
-        <%# <div id="details" class='panel panel-default'> %>
-          <div class='well'>
-            <p>£<%= @selected_pad.price %><p>
-            <p><%= @selected_pad.location.capitalize %><p>
-            <p><%= @selected_pad.about.capitalize %><p>
-          </div>
-        <%# </div> %>
+        <div class='well well-sm'>
+          <h5>About</h5>
+          <p>£<%= @selected_pad.price %><p>
+          <p><%= @selected_pad.location.capitalize %><p>
+          <p><%= @selected_pad.about.capitalize %><p>
+        </div>
 
-    <% bookings = @selected_pad.bookings %>
-    <% bookings.all.each do |booking| %>
-    <%= booking.date %>
-    <% end %>
 
         <div id='map' class='text-center'>
           <iframe
@@ -28,6 +23,14 @@
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9R3ulT60bFNuWCjvsrMHBm5l579Q9N_I
                         &q=<%= @selected_pad.location %>" allowfullscreen>
           </iframe>
+        </div>
+
+        <div class='well well-sm'>
+          <h5>Current Bookings</h5>
+          <% bookings = @selected_pad.bookings %>
+            <% bookings.all.each do |booking| %>
+              <p><%= booking.date %></p>
+            <% end %>
         </div>
 
         <div id='date' class='text-center'>
