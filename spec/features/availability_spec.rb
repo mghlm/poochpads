@@ -15,7 +15,7 @@ feature 'Availability' do
 
     expect(page).to have_content('You successfully booked:')
 
-    expect(page).to have_content('You successfully booked the following pad:')
+    expect(page).to have_content('You successfully booked:')
 
     visit('/pads')
     expect(page).to have_content('Fully Booked')

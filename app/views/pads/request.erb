@@ -1,3 +1,4 @@
+<% require 'date' %>
 
 <div class='container'>
   <div class='row'>
@@ -34,9 +35,11 @@
             <% end %>
         </div>
 
+        <% todays_date = DateTime.now.strftime("%Y-%m-%d") %>
+
         <div id='date' class='text-center'>
           <form action='/confirmation' method='post'>
-            Choose Date: <input type="date" name="booking_date"><br />
+            Choose Date: <input type="date" min="<%= todays_date %>" name="booking_date"><br />
               <button id='submit' class="btn btn-primary" type='submit' value='Confirm Request'>
                   Confirm Request
               </button>

@@ -48,7 +48,7 @@ class PoochPads < Sinatra::Base
   get '/pads/confirmation' do
       @confirmed_booking = Booking.first(id: session[:booking_id])
       @confirmed_pad = Pad.first(id: session[:pad_id])
-    unless @confirmed_pad.user == current_user
+    unless @confirmed_pad.user == current_user || @confirmed_booking.date == ""
       @confirmed_pad.switch_availability
       @confirmed_pad.save
       erb :'pads/confirmation'
