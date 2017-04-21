@@ -34,4 +34,13 @@ feature 'More Info' do
     expect(page).to have_content('Error, you cannot book your own pad')
     expect(Pad.first.available).to be_truthy
   end
+
+  scenario 'must specify date before booking' do
+    list_pad
+    sign_up_owner
+    click_button('More Info')
+    click_button('Confirm Request')
+    expect(page).to have_content("Error, please specify a date")
+  end
+  
 end
