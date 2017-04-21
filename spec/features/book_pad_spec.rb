@@ -24,4 +24,14 @@ feature 'More Info' do
     click_button ('More Info')
     expect(page).to have_content('Choose Date')
   end
+
+  scenario 'User cannot book own pad' do
+    sign_up
+    create_listing
+    click_button('More Info')
+    fill_in(:booking_date, with: '21/04/2018')
+    click_button('Confirm Request')
+    expect(page).to have_content('Error, you cannot book your own pad')
+    expect(Pad.first.available).to be_truthy
+  end
 end
