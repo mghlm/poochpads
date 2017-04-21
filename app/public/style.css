@@ -27,7 +27,8 @@ html, body {
 }
 
 div#map {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button#submit {
@@ -37,9 +38,3 @@ button#submit {
 div#date {
   margin-top: 20px;
 }
-/* div#details { */
-/*   background-color: #d79d72; */
-/*   border-radius: 20px; */
-/*   opacity: 50%; */
-/*   padding: 10px; */
-/* } */
