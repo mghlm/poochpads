@@ -8,4 +8,9 @@ About: <%= @selected_pad.about %>
     <button type='submit' value='Confirm Request'>
         Confirm Request
     </button>
-  </form>
+</form>
+
+<% bookings = @selected_pad.bookings %>
+<% bookings.all.each do |booking| %>
+<%= booking.date %>
+<% end %>
