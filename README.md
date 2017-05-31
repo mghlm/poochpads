@@ -1,10 +1,28 @@
 # Pooch Pads
 
+An AirBnB-style booking app for dog-owners, that lets users create a profile to list and book 'pads' around the world. The app was built in a week and was our first collaborative project. 
+
 ## Collaborators
 * [Naz Malik](https://github.com/nazwhale)
 * [Magnus Holm](https://github.com/mghlm)
 * [Pete Wilkins](https://github.com/petewilkins)
 * [Elaine Osbourn](https://github.com/kittysquee/)
+
+## Setup
+
+- Clone this repo
+- Install gems by running `bundle install`
+- Create following databases `poochpads_development` and `poochpads_test`
+- Run `rackup`
+- Visit `localhost:9292` in a browser
+
+## Screenshots
+
+![alt text](http://i.imgur.com/pG9wwab.png)
+
+![alt text](http://i.imgur.com/S1qcUxa.png)
+
+![alt text](http://i.imgur.com/XrrYksd.png)
 
 ## User stories
 
