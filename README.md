@@ -1,4 +1,5 @@
 # Pooch Pads
+[![Build Status](https://travis-ci.org/kittysquee/poochpads.svg?branch=master)](https://travis-ci.org/kittysquee/poochpads)
 
 An AirBnB-style booking app for dog-owners, that lets users create a profile to list and book 'pads' around the world. The app was built in a week and was our first collaborative project. 
 
